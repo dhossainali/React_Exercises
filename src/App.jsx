@@ -1,5 +1,5 @@
-import { Color } from "./Color"
-import { Colors } from "./Colors"
+import { TodoList } from "./TodoList";
+
 
 
 
@@ -10,8 +10,7 @@ function App() {
   ]
   return (
     <>
-      <Color color={color}/>
-      <Colors colors={colors}/>
+      <TodoList/>
     </>
   )
 }
