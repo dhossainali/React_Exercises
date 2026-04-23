@@ -1,8 +1,11 @@
+import { UncontrolledLogin } from "./UncontrolledLogin"
+
 
 function App() {
+  
   return (
     <>
-    
+    <UncontrolledLogin />
     </>
   )
 }
