@@ -1,5 +1,18 @@
+import { useEffect, useRef } from "react";
+
 export function UncontrolledLogin() {
-      function onLogin(event) {
+    const inputRef=useRef(null);
+    const trackRef=useRef(false);
+    useEffect(()=>{
+        if (!trackRef.current) {
+            console.log('It is the first mount');
+            trackRef.current=true;
+        } else {
+            console.log('It is the second time mount'); 
+        }
+        inputRef.current?.focus();
+    },[])  
+    function onLogin(event) {
             event.preventDefault();
 
             const userName = event.target.elements.namedItem('userName').value;
@@ -28,7 +41,7 @@ export function UncontrolledLogin() {
     return (
     <form onSubmit={onLogin}>
         <h1>My Uncontrolled Form </h1>
-        <input name="userName" />
+        <input ref={inputRef} name="userName" />
         <input name="password" type="password" />
         <input name="session" type="checkbox" />
         <button>Login</button>
