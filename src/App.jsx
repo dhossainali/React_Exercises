@@ -1,16 +1,14 @@
-import { TodoList } from "./TodoList";
+import { Colors } from "./Colors"
+
 
 
 
 
 function App() {
-  const color={id: 1, name: 'blue'};
-  const colors=[{id:11, name: 'black'}, 
-        {id: 12, name: 'red'}, {id:13, name: 'white'}, {id:14, name:'green'} 
-  ]
+  const colors=[{id:1, name:'red'}, {id:2, name:'blue'}, {id:3, name:'black'}]
   return (
     <>
-      <TodoList/>
+      <Colors colors={colors}/>
     </>
   )
 }
