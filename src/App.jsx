@@ -1,15 +1,21 @@
-import { Colors } from "./Colors"
+import { createContext, useState } from "react"
+import Hello from "./Hello"
 
 
 
 
-
+export const LanguageContext =createContext()
 function App() {
-  const colors=[{id:1, name:'red'}, {id:2, name:'blue'}, {id:3, name:'black'}]
+  const [language, setLanguage]=useState('en')
+  function handleLanguage(language) {
+    setLanguage(language)
+  }
   return (
-    <>
-      <Colors colors={colors}/>
-    </>
+    <LanguageContext.Provider value ={language}>
+      <button onClick={()=>handleLanguage('en')}>EN</button>
+      <button onClick={()=>handleLanguage('it')}>IT</button>
+      <Hello/>    
+    </LanguageContext.Provider>
   )
 }
 
